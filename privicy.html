@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy & Terms of Service</title>
+    <style>
+        /* Privacy Policy Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1050;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: black;
+        }
+        
+        .privacy-section {
+            margin-bottom: 20px;
+        }
+        
+        .privacy-section h3 {
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .cookie-banner button {
+            margin-left: 10px;
+        }
+        
+        .privacy-links {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .privacy-links a {
+            margin: 0 15px;
+            color: #337ab7;
+            text-decoration: none;
+        }
+        
+        .privacy-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your existing website content would go here -->
+    
+    <!-- Privacy Links in Footer -->
+    <div class="privacy-links">
+        <a href="#" onclick="openPrivacyModal()">Privacy Policy</a>
+        <a href="#" onclick="openTermsModal()">Terms of Service</a>
+    </div>
+    
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        This website uses cookies to ensure you get the best experience on our website.
+        <button class="btn btn-primary" onclick="acceptCookies()">Accept</button>
+        <button class="btn btn-default" onclick="declineCookies()">Decline</button>
+        <a href="#" onclick="openPrivacyModal()" style="color: #fff; margin-left: 15px;">Learn More</a>
+    </div>
+    
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePrivacyModal()">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated:</strong> <span id="currentDate"></span></p>
+            
+            <div class="privacy-section">
+                <h3>1. Information We Collect</h3>
+                <p>We collect information you provide directly to us, including:</p>
+                <ul>
+                    <li><strong>Contact Information:</strong> When you use our contact form, we collect your name and email address.</li>
+                    <li><strong>Usage Data:</strong> We collect information about your interactions with our website.</li>
+                    <li><strong>Cookies and Similar Technologies:</strong> We use cookies to enhance your browsing experience.</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>2. How We Use Your Information</h3>
+                <p>We use the information we collect to:</p>
+                <ul>
+                    <li>Provide, maintain, and improve our services</li>
+                    <li>Respond to your comments and questions</li>
+                    <li>Send you technical notices and support messages</li>
+                    <li>Monitor and analyze trends, usage, and activities in connection with our services</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>3. Cookies and Tracking Technologies</h3>
+                <p>We use cookies and similar tracking technologies to track activity on our website and hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier.</p>
+                <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>4. Data Sharing and Disclosure</h3>
+                <p>We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>5. Data Security</h3>
+                <p>We implement appropriate technical and organizational security measures designed to protect your personal information. However, please note that no method of transmission over the Internet or electronic storage is 100% secure.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>6. Your Rights</h3>
+                <p>Depending on your location, you may have certain rights regarding your personal information, such as the right to access, correct, or delete the personal information we hold about you.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>7. Changes to This Privacy Policy</h3>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>8. Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy, please contact us at: <strong>privacy@yourdomain.com</strong></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTermsModal()">&times;</span>
+            <h2>Terms of Service</h2>
+            <p><strong>Last updated:</strong> <span id="termsCurrentDate"></span></p>
+            
+            <div class="privacy-section">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>2. Use License</h3>
+                <p>Permission is granted to temporarily view the materials on this website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>3. Disclaimer</h3>
+                <p>The materials on this website are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>4. Limitations</h3>
+                <p>In no event shall we or our suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on this website.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>5. Accuracy of Materials</h3>
+                <p>The materials appearing on this website could include technical, typographical, or photographic errors. We do not warrant that any of the materials on this website are accurate, complete or current.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>6. Links</h3>
+                <p>We have not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by us of the site.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>7. Modifications</h3>
+                <p>We may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>8. Governing Law</h3>
+                <p>These terms and conditions are governed by and construed in accordance with the laws of the Netherlands and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set current dates
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString();
+        document.getElementById('termsCurrentDate').textContent = new Date().toLocaleDateString();
+        
+        // Modal functions
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').style.display = 'block';
+        }
+        
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').style.display = 'none';
+        }
+        
+        function openTermsModal() {
+            document.getElementById('termsModal').style.display = 'block';
+        }
+        
+        function closeTermsModal() {
+            document.getElementById('termsModal').style.display = 'none';
+        }
+        
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+        
+        // Cookie functions
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookieBanner').style.display = 'none';
+            // Set a cookie that expires in 30 days
+            setCookie('userConsent', 'accepted', 30);
+        }
+        
+        function declineCookies() {
+            localStorage.setItem('cookiesAccepted', 'false');
+            document.getElementById('cookieBanner').style.display = 'none';
+            // Delete any existing cookies
+            deleteCookie('userConsent');
+        }
+        
+        // Show cookie banner if not accepted
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookieBanner').style.display = 'block';
+        }
+        
+        // Cookie helper functions
+        function setCookie(name, value, days) {
+            const expires = new Date();
+            expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+        }
+        
+        function getCookie(name) {
+            const nameEQ = name + '=';
+            const ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+        
+        function deleteCookie(name) {
+            document.cookie = name + '=; Max-Age=-99999999;';
+        }
+    </script>
+</body>
+</html>
