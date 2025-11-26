@@ -235,7 +235,7 @@ textarea {
 /* Modal window */
 .modal-content {
     background: white;
-    width: 75%;
+    width: 90%;
     height: 90%;
     margin: 3% auto;
     padding: 0;
@@ -256,7 +256,7 @@ textarea {
 
 /* Iframe for subsite */
 #popupFrame {
-    width: 90%;
+    width: 100%;
     height: 100%;
     border: none;
 }
@@ -267,11 +267,9 @@ textarea {
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #662616;
     font-weight: bold;
 }
 
 .navbar-default .navbar-brand {
-    color: #662616;
     font-weight: bold;
 }
